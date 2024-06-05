@@ -43,7 +43,7 @@ FQuat UMyBlueprintFunctionLibrary::SphericalScaleQuat(const FQuat& Quat, float S
 	return FQuat::Slerp/*FullPath*/(FQuat::Identity, Quat, Slerp);
 }
 
-FVector UMyBlueprintFunctionLibrary::GetRotateVector2(FRotator A)
+FVector UMyBlueprintFunctionLibrary::GetRotateVector(FRotator A)
 {
 	return A.Euler();
 }
