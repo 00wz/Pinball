@@ -38,6 +38,12 @@ class PINBALL_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintPure, Category = "Quaternion")
 	static FQuat GetRotationQuat(USceneComponent *sceneComponent);
 		
+	UFUNCTION(BlueprintPure, Category = "Quaternion")
+	static FQuat TransformQuat(FTransform Transform, FQuat Quat);
+		
+	UFUNCTION(BlueprintPure, Category = "Quaternion")
+	static FQuat GetQuatFromAxisAngle(FVector Axis, float AngleRad);
+		
 	UFUNCTION(BlueprintCallable, Category = "Quaternion")
 	static void AddWorldRotatoin(USceneComponent *sceneComponent, const FQuat& DeltaRotation, bool bSweep=false);		
 

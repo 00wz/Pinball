@@ -53,6 +53,16 @@ FQuat UMyBlueprintFunctionLibrary::GetRotationQuat(USceneComponent* sceneCompone
 	return sceneComponent -> GetComponentTransform().GetRotation();
 }
 
+FQuat UMyBlueprintFunctionLibrary::TransformQuat(FTransform Transform, FQuat Quat)
+{
+	return Transform.TransformRotation(Quat);
+}
+
+FQuat UMyBlueprintFunctionLibrary::GetQuatFromAxisAngle(FVector Axis, float AngleRad)
+{
+	return FQuat(Axis, AngleRad);
+}
+
 void UMyBlueprintFunctionLibrary::AddWorldRotatoin(USceneComponent *sceneComponent, const FQuat& DeltaRotation, bool bSweep)
 {
 	sceneComponent -> AddWorldRotation(DeltaRotation, bSweep);
